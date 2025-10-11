@@ -1,0 +1,40 @@
+{
+  "users": [
+    {
+      "username": "olivia_turner",
+      "email": "olivia.turner@example.com",
+      "password": "Olivia@7890",
+      "day": "10",
+      "month": "07",
+      "year": "1994",
+      "first_name": "Olivia",
+      "last_name": "Turner",
+      "company_name": "Quantum Solutions",
+      "address1": "321 Pine Street",
+      "address2": "Apt 2A",
+      "country": "United States",
+      "state": "New York",
+      "city": "New York City",
+      "zipcode": "10001",
+      "telephone": "+1-212-555-0145"
+    },
+    {
+      "username": "liam_sanders",
+      "email": "liam.sanders@example.com",
+      "password": "Liam@3210",
+      "day": "02",
+      "month": "12",
+      "year": "1992",
+      "first_name": "Liam",
+      "last_name": "Sanders",
+      "company_name": "NovaTech Labs",
+      "address1": "78 River Road",
+      "address2": "Suite 7C",
+      "country": "Canada",
+      "state": "British Columbia",
+      "city": "Vancouver",
+      "zipcode": "V5K 0A1",
+      "telephone": "+1-604-555-0199"
+    }
+  ]
+}
