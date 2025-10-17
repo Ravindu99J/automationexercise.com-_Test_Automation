@@ -23,6 +23,8 @@ class RegisterForm:
         self.zipcode = (By.ID, "zipcode")
         self.telephone = (By.ID, "mobile_number")
         self.button = (By.XPATH, "//button[text()='Create Account']")
+        self.created_message = (By.XPATH, "//b[text()='Account Created!']")
+        self.continue_button = (By.CSS_SELECTOR, "a[data-qa='continue-button']")
 
     def register_form(self, password, day, month, year, first_name, last_name,
                       company_name, adderss1, adderss2, country, state, city, zipcode, telephone):
@@ -46,3 +48,6 @@ class RegisterForm:
         self.driver.find_element(*self.zipcode).send_keys(zipcode)
         self.driver.find_element(*self.telephone).send_keys(telephone)
         self.driver.find_element(*self.button).click()
+
+        assert self.driver.find_element(*self.created_message).is_displayed()
+        self.driver.find_element(*self.continue_button).click()
