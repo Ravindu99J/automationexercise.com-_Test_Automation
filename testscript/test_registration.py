@@ -16,7 +16,8 @@ with open(data_path) as f:
 def test_registration(BrowserInstance, user):
 
     driver = BrowserInstance
-    homepage = HomePage(driver)
+    username = user['username']
+    homepage = HomePage(driver,username)
     homepage.homepage_validation()
     login_page = LoginPage(driver)
     login_page.signup(user['username'], user['email'])
@@ -27,15 +28,5 @@ def test_registration(BrowserInstance, user):
                                 user['city'], user['zipcode'], user['telephone'])
 
 
-
-    assert driver.find_element(By.XPATH,"//b[text()='Account Created!']").is_displayed()
-    print("Account Created")
-    driver.find_element(By.CSS_SELECTOR, "a[data-qa='continue-button']").click()
-    assert driver.find_element(By.XPATH,"//a[text()=' Logged in as ']").is_displayed()
-    print("Logged in")
-    username = user['username']
-    assert driver.find_element(By.XPATH,f"//b[text()='{username}']").is_displayed()
-    driver.find_element(By.CSS_SELECTOR, "a[href='/delete_account']").click()
-    assert driver.find_element(By.XPATH,"//b[text()='Account Deleted!']").is_displayed()
-    print("Account Deleted")
-    driver.find_element(By.CSS_SELECTOR, "a[data-qa='continue-button']").click()
+    homepage.validate_login()
+    homepage.delete_account()
