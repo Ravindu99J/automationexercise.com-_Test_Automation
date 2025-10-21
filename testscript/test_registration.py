@@ -19,6 +19,7 @@ def test_registration(BrowserInstance, user):
     username = user['username']
     homepage = HomePage(driver,username)
     homepage.homepage_validation()
+    homepage.login_link()
     login_page = LoginPage(driver)
     login_page.signup(user['username'], user['email'])
     register_form = RegisterForm(driver)
@@ -30,3 +31,28 @@ def test_registration(BrowserInstance, user):
 
     homepage.validate_login()
     homepage.delete_account()
+
+@pytest.mark.test_case_2
+@pytest.mark.parametrize("user", users)
+def test_case2(BrowserInstance, user):
+    driver = BrowserInstance
+    homepage = HomePage(driver,user['username'])
+    homepage.homepage_validation()
+    homepage.login_link()
+    login_page = LoginPage(driver)
+    login_page.signup(user['username'], user['email'])
+    register_form = RegisterForm(driver)
+    register_form.register_form(user['password'], user['day'], user['month'], user['year'],
+                                user['first_name'], user['last_name'], user['company_name'],
+                                user['address1'], user['address2'], user['country'],user['state'],
+                                user['city'], user['zipcode'], user['telephone'])
+
+    homepage.logout()
+    homepage.login_link()
+    login_page.login(user['email'], user['password'])
+    homepage.validate_login()
+    homepage.delete_account()
+
+
+
+

@@ -17,24 +17,7 @@
       "city": "New York City",
       "zipcode": "10001",
       "telephone": "+1-212-555-0145"
-    },
-    {
-      "username": "liam_sanders",
-      "email": "liam.sanders@example.com",
-      "password": "Liam@3210",
-      "day": "02",
-      "month": "12",
-      "year": "1992",
-      "first_name": "Liam",
-      "last_name": "Sanders",
-      "company_name": "NovaTech Labs",
-      "address1": "78 River Road",
-      "address2": "Suite 7C",
-      "country": "Canada",
-      "state": "British Columbia",
-      "city": "Vancouver",
-      "zipcode": "V5K 0A1",
-      "telephone": "+1-604-555-0199"
     }
   ]
 }
+
